@@ -1,10 +1,14 @@
-name: Cart Tests
+name: Test
 
 on:
   push:
     branches: [ main, master ]
+    paths:
+      - 'QuickCart/**'
   pull_request:
     branches: [ main, master ]
+    paths:
+      - 'QuickCart/**'
   # Allow manual triggering
   workflow_dispatch:
 
