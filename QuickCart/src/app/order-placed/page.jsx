@@ -1,5 +1,5 @@
 'use client'
-import { assets } from '@/src/assets/assets'
+import { assets } from '@/assets/assets'
 import { useAppContext } from '@/components/AppContext'
 import Image from 'next/image'
 import { useEffect } from 'react'

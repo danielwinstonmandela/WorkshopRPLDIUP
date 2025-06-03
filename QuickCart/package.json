@@ -10,7 +10,7 @@
     "lint": "eslint ../__test__",
     "lint:fix": "eslint ../__test__ --fix",
     "start": "next start",
-    "test": "jest",
+    "test": "NEXT_PUBLIC_SANITY_PROJECT_ID=ki1eyc6s NEXT_PUBLIC_SANITY_DATASET=production SANITY_API_TOKEN=skxyXtkprMDk9JMLF7pA2kdhsgaI9q3l512et0ucpn5WK4gy6t72pJ3GEee3boP6IUzpCjLZBYsR4hvou4oZwkuyXclMkgzsFTWuJfMBWBt45otcdCcNjKHzjJyEMN05U3oN5GcScbpMFWd7iVi5BGJdgaiP6wf8PmsdiAqpPkvjJG9wgajQ jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "test:ci": "jest --coverage --watchAll=false"
@@ -25,10 +25,12 @@
     "mongoose": "^8.12.1",
     "next": "^15.1.6",
     "next-sanity": "^9.12.0",
+    "node-fetch": "^2.7.0",
     "pg": "^8.16.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-hot-toast": "^2.5.1"
+    "react-hot-toast": "^2.5.1",
+    "wait-on": "^8.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.0.0",

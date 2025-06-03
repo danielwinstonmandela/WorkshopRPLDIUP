@@ -19,6 +19,24 @@ const AddAddress = () => {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
 
+        // Add _type for Sanity schema
+        const addressData = {
+            ...address,
+            _type: "address",
+        };
+
+        try {
+            const res = await fetch('/api/sanity', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(addressData),
+            });
+            const data = await res.json();
+            console.log('Sanity response:', data);
+            // Optionally, show a success message or redirect
+        } catch (error) {
+            console.error('Error saving address:', error);
+        }
     }
 
     return (

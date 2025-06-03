@@ -1,6 +1,6 @@
 'use client'
-import Navbar from '@/src/components/seller/Navbar'
-import Sidebar from '@/src/components/seller/Sidebar'
+import Navbar from '@/components/seller/Navbar'
+import Sidebar from '@/components/seller/Sidebar'
 import React from 'react'
 
 const Layout = ({ children }) => {

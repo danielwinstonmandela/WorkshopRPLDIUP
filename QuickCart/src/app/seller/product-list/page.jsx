@@ -1,10 +1,10 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import { assets, productsDummyData } from "@/src/assets/assets";
+import { assets, productsDummyData } from "@/assets/assets";
 import Image from "next/image";
 import { useAppContext } from "@/components/AppContext";
-import Footer from "@/src/components/seller/Footer";
-import Loading from "@/src/components/Loading";
+import Footer from "@/components/seller/Footer";
+import Loading from "@/components/Loading";
 
 const ProductList = () => {
 
