@@ -1,11 +1,11 @@
 "use client"
 import React from "react";
-import { assets, BagIcon, BoxIcon, CartIcon, HomeIcon} from "@/src/assets/assets";
+import { assets, BagIcon, BoxIcon, CartIcon, HomeIcon} from "@/assets/assets";
 import Link from "next/link"
-import { useAppContext } from "@/context/AppContext";
+import { useAppContext } from "@/components/AppContext";
 import Image from "next/image";
 import { useClerk, UserButton } from "@clerk/nextjs";
-import Home from "@/src/app/page";
+import Home from "@/app/page";
 
 const Navbar = () => {
 
