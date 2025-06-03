@@ -25,6 +25,17 @@ jobs:
         run: npm install
         working-directory: QuickCart
 
+      - name: Build Next.js app
+        run: npm run build
+        working-directory: QuickCart
+
+      - name: Start Next.js server
+        run: npm start &
+        working-directory: QuickCart
+
+      - name: Wait for Next.js server
+        run: npx wait-on http://localhost:3000
+
       - name: Run tests
         run: npm test
         working-directory: QuickCart
