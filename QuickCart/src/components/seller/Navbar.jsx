@@ -1,7 +1,7 @@
 import React from 'react'
 import { assets } from '../../assets/assets'
 import Image from 'next/image'
-import { useAppContext } from '@/src/components/AppContext'
+import { useAppContext } from '@/components/AppContext'
 
 const Navbar = () => {
 
