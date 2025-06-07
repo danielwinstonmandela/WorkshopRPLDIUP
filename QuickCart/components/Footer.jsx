@@ -9,10 +9,11 @@ const Footer = () => {
         <div className="w-4/5">
           <Image className="w-28 md:w-32" src={assets.logo} alt="logo" />
           <p className="mt-6 text-sm">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Satwika Nino Wandhana - 23/516202/PA/22066
+            Adam Maulana Haq - 23/511623/PA/21832
+            Daniel Winston Mandela Tulung - 23/516260/PA/22080
+            Rindra Adriansyah - 23/511559/PA/21820
+            Mohammad Azka Khairur Rohman - 23/511608/PA/21830
           </p>
         </div>
 
