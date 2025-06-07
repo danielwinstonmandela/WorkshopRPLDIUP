@@ -1,10 +1,8 @@
 import { getAuth, User } from "@clerk/nextjs/server";
-import connectDB from "@/config/db";
-import Address from "@/models/Address";
 import { NextResponse } from "next/server";
 import Product from "@/models/Product"; // Assuming you have a Product model to fetch product details
 import { inngest } from "@/config/inngest";
-import { err } from "inngest/types";
+
 
 export async function POST(request) {
     try {
