@@ -15,7 +15,7 @@ const OrderSummary = () => {
     try {
       
       const token = await getToken()
-      const {data}  = await get('/api/user/get-address', { headers: { Authorization: `Bearer ${token}` } });
+      const {data}  = await axios.get('/api/user/get-address', { headers: { Authorization: `Bearer ${token}` } });
       if (data.success) {
         setUserAddresses(data.addresses)
         if (data.addresses.length > 0) {
