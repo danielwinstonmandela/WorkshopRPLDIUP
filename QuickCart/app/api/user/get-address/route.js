@@ -8,6 +8,7 @@ export async function POST(request) {
     try {
         
         const { userId } = getAuth(request)
+        const { address } = await request.json()
 
         await connectDB()
 
