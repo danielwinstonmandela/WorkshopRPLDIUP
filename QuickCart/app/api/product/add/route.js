@@ -1,7 +1,9 @@
 import { v2 as cloudinary } from "cloudinary";
-import { getAuth } from "@clerk/nextjs/server";
+import { getAuth } from '@clerk/nextjs/server';
 import connectDB from "@/config/db";
 import Product from "@/models/Product";
+import authSeller from "@/lib/authSeller";
+import { NextResponse } from "next/server";
 
 //configure cloudinary
 cloudinary.config({
@@ -13,7 +15,7 @@ cloudinary.config({
 export async function POST(request) {
     try {
         
-        const { userId} = getAuth(request)
+        const { userId } = getAuth(request)
         
         const isSeller = await authSeller(userId)
 
@@ -64,13 +66,13 @@ export async function POST(request) {
             name,
             description,
             category,
-            price: Number(price),
-            offerPrice: Number(offerprice),
+            price:Number(price),
+            offerPrice:Number(offerprice),
             image,
             date: Date.now()
         })
 
-        return NextResponse.json({ success: true, message: "Product added successfully", newProduct });
+        return NextResponse.json({ success: true, message: 'Product added successfully', newProduct });
 
 
     } catch (error) {

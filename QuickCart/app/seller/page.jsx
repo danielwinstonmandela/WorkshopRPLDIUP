@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 const AddProduct = () => {
 
-  const { getToken } = useAppContext();
+  const { getToken } = useAppContext()
 
   const [files, setFiles] = useState([]);
   const [name, setName] = useState('');
@@ -34,9 +34,9 @@ const AddProduct = () => {
 
     try {
       
-      const token = await getToken();
+      const token = await getToken()
 
-      const { data } = await axios.post('/api/product/add', formData, {headers: {Authorization: 'Bearer ${token'}} )
+      const { data } = await axios.post('/api/product/add', formData, {headers: {Authorization: `Bearer ${token}`}} )
 
       if (data.success) {
         toast.success(data.message);
@@ -51,7 +51,7 @@ const AddProduct = () => {
       }
 
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.message)
     }
 
     
