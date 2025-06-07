@@ -1,5 +1,7 @@
 import { v2 as cloudinary } from "cloudinary";
 import { getAuth } from "@clerk/nextjs/server";
+import connectDB from "@/config/db";
+import Product from "@/models/Product";
 
 //configure cloudinary
 cloudinary.config({
@@ -30,7 +32,7 @@ export async function POST(request) {
         const files = formData.getAll('images');
 
         if (!files || files.length === 0) {
-            return NextResponse.json({ success: false, message: "No files uploaded, Please upload at least one image" });
+            return NextResponse.json({ success: false, message: 'No files uploaded, Please upload at least one image' });
         }
 
         const result = await Promise.all(
@@ -56,7 +58,22 @@ export async function POST(request) {
 
         const image = result.map(result => result.secure_url)
 
+        await connectDB()
+        const newProduct = await Product.create({
+            userId,
+            name,
+            description,
+            category,
+            price: Number(price),
+            offerPrice: Number(offerprice),
+            image,
+            date: Date.now()
+        })
+
+        return NextResponse.json({ success: true, message: "Product added successfully", newProduct });
+
+
     } catch (error) {
-        
+        NextResponse.json({ success: false, message: error.message });
     }
 }
