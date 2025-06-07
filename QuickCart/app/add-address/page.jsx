@@ -10,7 +10,7 @@ import axios from "axios";
 
 const AddAddress = () => {
 
-    const { getToken, router } = useAppContext();
+    const { getToken, router } = useAppContext()
 
     const [address, setAddress] = useState({
         fullName: '',
@@ -31,7 +31,7 @@ const AddAddress = () => {
 
             if (data.success) {
                 toast.success(data.message)
-                router.push('/cart');
+                router.push('/cart')
             } else {
                 toast.error(data.message)
             }
