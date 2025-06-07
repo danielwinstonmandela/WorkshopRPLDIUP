@@ -1,0 +1,25 @@
+import { getAuth } from "@clerk/nextjs/server";
+import User from "@/models/User";
+import { getAuth } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
+
+
+export async function GET(request) {
+
+    try {
+        
+        const { userID} = getAuth(request)
+
+        await connectDB()
+        const user = await User.findById(userID)
+
+        if (!user) {
+            return NextResponse.json({ success: false, message: "User not found" })
+        }
+
+        return NextResponse.json({success:true, user})
+
+    } catch (error) {
+        return NextResponse.json({ success: false, message: "error.message" })
+    }
+}
