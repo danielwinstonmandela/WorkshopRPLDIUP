@@ -3,7 +3,8 @@ import connectDB from '@/config/db'
 import Address from '@/models/address'
 import { NextResponse } from 'next/server'
 
-export async function GET(request) {
+
+export async function POST(request) {
     try {
         
         const { userId } = getAuth(request)
