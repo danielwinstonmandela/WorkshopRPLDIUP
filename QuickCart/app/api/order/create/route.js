@@ -2,6 +2,7 @@ import { getAuth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import Product from "@/models/Product"; // Assuming you have a Product model to fetch product details
 import { inngest } from "@/config/inngest";
+import User from "@/models/User"; // Assuming you have a User model to manage user data
 
 
 export async function POST(request) {
@@ -11,7 +12,7 @@ export async function POST(request) {
         const { address, items } = await request.json();
 
         if (!address || items.length === 0) {
-            return NextResponse.json({ success: false, message: "Invalid Data" });   
+            return NextResponse.json({ success: false, message: 'Invalid Data' });   
         }
 
         //calculate total amount using items
@@ -22,7 +23,7 @@ export async function POST(request) {
 
         await inngest.send({
             name: 'order/created',
-            data: {
+            data:{
                 userId,
                 address,
                 items,
@@ -33,7 +34,7 @@ export async function POST(request) {
 
         //clear user cart
         const user = await User.findById(userId)
-        user.cartItem = {}
+        user.cartItems = {}
         await user.save()
 
         return NextResponse.json({ success: true, message: 'Order created successfully' });
