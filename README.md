@@ -26,6 +26,9 @@ The application follows a well-structured architecture with proper separation of
 - **Containerization**: Docker support
 - **CI/CD**: GitHub Actions workflow
 
+### System Architecture - C4 Diagram
+![C4 UML Diagram](docs/C4%20UML%20Diagram%20of%20an%20E-commerce%20Website.pdf)
+
 ## Documentation
 Comprehensive documentation is available in the [docs/](docs/) directory:
 - [C4 UML Diagram](docs/C4%20UML%20Diagram%20of%20an%20E-commerce%20Website.pdf)
