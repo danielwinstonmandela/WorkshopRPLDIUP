@@ -1,5 +1,12 @@
 # WorkshopRPLDIUP - QuickCart E-commerce Platform
 
+## Quick Access
+**Live Application**: [https://quick-cart-six-woad.vercel.app/](https://quick-cart-six-woad.vercel.app/) (Deployed on Vercel)
+
+**Source Code**: [QuickCart Repository](https://github.com/Nino-123/QuickCart)
+
+> **Note**: If you want to access the QuickCart folder directly, you can visit the repository link above or use the live application deployed on Vercel.
+
 ## Team Members
 - Daniel Winston Mandela Tulung 23/516260/PA/22080
 - Mohammad Azka Khairur Rahman 23/511608/PA/21830
